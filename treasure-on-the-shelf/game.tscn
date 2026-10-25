@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://bsl4175irypwg"]
+
+[ext_resource type="Script" uid="uid://b0cxdtte8q7ff" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://b1gia7lr4p7h3" path="res://floor.png" id="2_fc0e3"]
+[ext_resource type="Texture2D" uid="uid://d18n6eoj4qwxa" path="res://shelf.png" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://bxnli08d8c3tp" path="res://Nintendoswitch.png" id="3_feb5d"]
+[ext_resource type="Texture2D" uid="uid://da3u53v0n3vv" path="res://speechbubble.png" id="5_7jktm"]
+[ext_resource type="Texture2D" uid="uid://bwbl7ch7hkg7w" path="res://littleguy.png" id="6_ryrav"]
+[ext_resource type="AudioStream" uid="uid://dju8cvb6nxgx" path="res://Sunborn - Vacation (freetouse.com).mp3" id="7_eow3j"]
+[ext_resource type="Texture2D" uid="uid://ckgoujwcj0bb6" path="res://Stonewall.png" id="8_j5wjh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ky6y1"]
+size = Vector2(611, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjttf"]
+size = Vector2(82, 34)
+
+[node name="Game" type="Node2D" unique_id=955813001]
+script = ExtResource("1_e2o6t")
+metadata/_edit_vertical_guides_ = [-202161.0]
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=544892658]
+
+[node name="floorcollider" type="CollisionShape2D" parent="floor" unique_id=994147380]
+position = Vector2(5.5, 321.5)
+shape = SubResource("RectangleShape2D_ky6y1")
+
+[node name="Sprite2D" type="Sprite2D" parent="floor" unique_id=73490462]
+texture_filter = 1
+position = Vector2(7.4999695, 129.00005)
+scale = Vector2(18.96875, 20)
+texture = ExtResource("2_fc0e3")
+
+[node name="Sprite2D" type="Sprite2D" parent="floor/Sprite2D" unique_id=2089755458]
+texture_filter = 1
+position = Vector2(84.9028, -3.000002)
+scale = Vector2(2.0576606, 1.054)
+texture = ExtResource("2_fc0e3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1195420655]
+
+[node name="Shelf" type="Area2D" parent="." unique_id=1198703338]
+
+[node name="Sprite2D" type="Sprite2D" parent="Shelf" unique_id=2123159834]
+texture_filter = 1
+position = Vector2(12, 52.000004)
+scale = Vector2(15, 15)
+texture = ExtResource("2_feb5d")
+
+[node name="switch" type="Area2D" parent="." unique_id=1404656438]
+
+[node name="Sprite2D" type="Sprite2D" parent="switch" unique_id=478951947]
+texture_filter = 1
+position = Vector2(5, -196.00002)
+scale = Vector2(3, 3)
+texture = ExtResource("3_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="switch" unique_id=1023728871]
+position = Vector2(7, -196)
+shape = SubResource("RectangleShape2D_sjttf")
+
+[node name="start" type="Button" parent="." unique_id=1302957752]
+process_mode = 3
+offset_left = -212.0
+offset_top = -707.0
+offset_right = 216.0
+offset_bottom = -537.0
+theme_override_font_sizes/font_size = 64
+text = "start"
+metadata/_edit_use_anchors_ = true
+
+[node name="speach_bubble_spr" type="Sprite2D" parent="." unique_id=1303585933]
+texture_filter = 1
+position = Vector2(97, 150)
+scale = Vector2(15, 15)
+texture = ExtResource("5_7jktm")
+
+[node name="menu" type="Label" parent="." unique_id=1806822170]
+offset_left = -328.0
+offset_top = -1098.0
+offset_right = 327.0
+offset_bottom = -979.0
+theme_override_font_sizes/font_size = 64
+text = "Treasure on the shelf"
+
+[node name="textbubble1" type="Label" parent="." unique_id=238728003]
+offset_left = -68.00003
+offset_top = 15.000061
+offset_right = 216.99997
+offset_bottom = 150.00006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Hey thats my 
+switch up there!!!"
+
+[node name="textbubble2" type="Label" parent="." unique_id=1277057127]
+offset_left = -68.00003
+offset_top = 15.000061
+offset_right = 216.99997
+offset_bottom = 150.00006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "I can't reach that 
+high."
+
+[node name="textbubble3" type="Label" parent="." unique_id=1493108812]
+offset_left = -68.00003
+offset_top = 15.000061
+offset_right = 216.99997
+offset_bottom = 150.00006
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Im just a
+little guy :("
+
+[node name="cutsceneplayer" type="Sprite2D" parent="." unique_id=1407698620]
+texture_filter = 1
+position = Vector2(11, 271)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("6_ryrav")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1512862950]
+stream = ExtResource("7_eow3j")
+volume_db = -7.995
+
+[node name="Littleguysleft" type="Label" parent="." unique_id=1198364570]
+offset_left = 74.0
+offset_top = -325.0
+offset_right = 577.0
+offset_bottom = -208.0
+theme_override_font_sizes/font_size = 32
+text = "Little Guys left:"
+
+[node name="losetext" type="Label" parent="." unique_id=938079899]
+offset_left = -1887.0
+offset_top = -306.0
+offset_right = -1213.0
+offset_bottom = -261.0
+theme_override_font_sizes/font_size = 32
+text = "You don't have any friends left :("
+
+[node name="retry" type="Button" parent="." unique_id=1555097908]
+offset_left = -1768.0
+offset_top = 126.0
+offset_right = -1502.0
+offset_bottom = 254.0
+theme_override_font_sizes/font_size = 64
+text = "Retry"
+
+[node name="wintext" type="Label" parent="." unique_id=1573794484]
+offset_left = 1442.0
+offset_top = -286.0
+offset_right = 1775.0
+offset_bottom = -225.0
+theme_override_font_sizes/font_size = 32
+text = "With the power of friendship
+You got your switch back!! :)
+"
+
+[node name="cutsceneplayer2" type="Sprite2D" parent="." unique_id=333246407]
+texture_filter = 1
+position = Vector2(1686, 220)
+scale = Vector2(4.5, 4.5)
+texture = ExtResource("6_ryrav")
+
+[node name="speach_bubble_spr2" type="Sprite2D" parent="." unique_id=795452641]
+texture_filter = 1
+position = Vector2(1808, 68)
+scale = Vector2(15, 15)
+texture = ExtResource("5_7jktm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1378785322]
+texture_filter = 1
+position = Vector2(1707.0001, 208.00005)
+rotation = 0.4660029
+scale = Vector2(3, 3)
+texture = ExtResource("3_feb5d")
+
+[node name="winspeach" type="Label" parent="." unique_id=1520435482]
+offset_left = 1643.0
+offset_top = -66.0
+offset_right = 1967.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Time to play 
+Minecraft!!!"
+
+[node name="restart" type="Button" parent="." unique_id=837044758]
+offset_left = 1138.0
+offset_top = 29.0
+offset_right = 1581.0
+offset_bottom = 131.0
+theme_override_font_sizes/font_size = 64
+text = "Restart"
+
+[node name="backround" type="Sprite2D" parent="." unique_id=1004859803]
+z_index = -37
+texture_filter = 1
+position = Vector2(-10.499988, -798)
+scale = Vector2(37.09375, 20.499998)
+texture = ExtResource("8_j5wjh")
+
+[node name="backround2" type="Sprite2D" parent="." unique_id=1736802295]
+z_index = -37
+texture_filter = 1
+position = Vector2(-7.4999924, 2.5000153)
+scale = Vector2(38.40625, 22.906248)
+texture = ExtResource("8_j5wjh")
+
+[node name="backround3" type="Sprite2D" parent="." unique_id=1288916244]
+z_index = -37
+texture_filter = 1
+position = Vector2(1601.9999, -20.00003)
+scale = Vector2(37.09375, 23.25)
+texture = ExtResource("8_j5wjh")
+
+[node name="backround4" type="Sprite2D" parent="." unique_id=1074104848]
+z_index = -37
+texture_filter = 1
+position = Vector2(-1581, -5.5000076)
+scale = Vector2(40.8125, 25.656248)
+texture = ExtResource("8_j5wjh")
+
+[connection signal="body_shape_entered" from="switch" to="." method="_on_switch_body_shape_entered"]
+[connection signal="body_shape_exited" from="switch" to="." method="_on_switch_body_shape_exited"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]

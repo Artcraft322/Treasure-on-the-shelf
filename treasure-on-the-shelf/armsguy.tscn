@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://o65v6jlsfu74"]
+
+[ext_resource type="Texture2D" uid="uid://b0y8eqdt0gt6d" path="res://armslittleguy.png" id="1_ex7r3"]
+[ext_resource type="Script" uid="uid://5bssgit1yi0b" path="res://armsguy.gd" id="1_hvgwq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hvgwq"]
+size = Vector2(52, 5.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vduig"]
+radius = 7.0
+height = 36.0
+
+[node name="armsguy" type="CharacterBody2D" unique_id=1145019577 groups=["player"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_hvgwq")
+
+[node name="armsguy" type="Sprite2D" parent="." unique_id=1404169529]
+texture_filter = 1
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("1_ex7r3")
+
+[node name="armsguycoll" type="CollisionShape2D" parent="." unique_id=451803822]
+position = Vector2(0, -17.25)
+shape = SubResource("RectangleShape2D_hvgwq")
+
+[node name="armsguycoll2" type="CollisionShape2D" parent="." unique_id=1493923970]
+shape = SubResource("CapsuleShape2D_vduig")

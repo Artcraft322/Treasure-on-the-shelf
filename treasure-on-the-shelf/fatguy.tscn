@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://iceyjcsagjp5"]
+
+[ext_resource type="Script" uid="uid://dcn4ac35jc4n2" path="res://fatguy.gd" id="1_a2epe"]
+[ext_resource type="Texture2D" uid="uid://c3cwttntutkbt" path="res://fatlittleguy.png" id="1_jglrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2epe"]
+size = Vector2(10, 7.75)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_666ik"]
+radius = 3.5
+height = 15.0
+
+[node name="fatguy" type="CharacterBody2D" unique_id=1464929813]
+scale = Vector2(3.5, 3.5)
+script = ExtResource("1_a2epe")
+
+[node name="fatguy" type="Sprite2D" parent="." unique_id=369863585]
+texture_filter = 1
+position = Vector2(0, 10)
+texture = ExtResource("1_jglrq")
+
+[node name="fatguycoll" type="CollisionShape2D" parent="." unique_id=29213848]
+position = Vector2(0, 1.75)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_a2epe")
+
+[node name="fatguycoll2" type="CollisionShape2D" parent="." unique_id=257081649]
+position = Vector2(0, 6.5)
+shape = SubResource("CapsuleShape2D_666ik")

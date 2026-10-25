@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://x6slbq7ib8a1"]
+
+[ext_resource type="Texture2D" uid="uid://bwbl7ch7hkg7w" path="res://littleguy.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://doabtphh476eh" path="res://player.gd" id="1_onrkg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_feb5d"]
+radius = 8.0
+height = 34.0
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ky6y1"]
+points = PackedVector2Array(-12, -20, 4, -20, 12, -6.5, -12, -8)
+
+[node name="Littleguy" type="CharacterBody2D" unique_id=904209697 groups=["player"]]
+scale = Vector2(2, 2)
+motion_mode = 1
+script = ExtResource("1_onrkg")
+
+[node name="littleguy" type="Sprite2D" parent="." unique_id=1451921229]
+texture_filter = 1
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("1_4flbx")
+
+[node name="littleguycoll" type="CollisionShape2D" parent="." unique_id=1110081412]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_feb5d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2017648271]
+shape = SubResource("ConvexPolygonShape2D_ky6y1")
